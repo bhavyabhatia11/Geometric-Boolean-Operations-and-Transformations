@@ -6,7 +6,7 @@ requires = [
     "numpy",
     "scipy",
     "bokeh",
-    "matplotlib",
+    "matplotlib"
 
 ]
 build-backend = "setuptools.build_meta"

@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/gbot/__init__.py
+src/gbot/boolean operations.py
+src/gbot/bsplines.py
+src/gbot/dividedDifference.py
+src/gbot/draggablepoints.py
+src/gbot/transformations.py
+src/gbot.egg-info/PKG-INFO
+src/gbot.egg-info/SOURCES.txt
+src/gbot.egg-info/dependency_links.txt
+src/gbot.egg-info/top_level.txt

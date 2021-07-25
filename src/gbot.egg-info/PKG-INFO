@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: gbot
+Version: 0.0.1
+Summary: A set of functions to perform Geometric Boolean Operations and Tranformations(GBOT) 
+Home-page: https://github.com/bhvya2603/Geometric-Boolean-Operations-and-Transformations
+Author: Bhavya Bhatia
+Author-email: bhavya2603@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/bhvya2603/Geometric-Boolean-Operations-and-Transformations/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+This is a compiled package of the assignments given as part of the course ME/MF F342 Computer Aided Design, this package is useful in performing 3D projective tranformations on numpy matrices and also performing geometric boolean operations like intersection union and difference on polygons.
+
