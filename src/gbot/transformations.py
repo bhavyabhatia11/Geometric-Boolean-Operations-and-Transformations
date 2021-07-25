@@ -7,8 +7,17 @@ Date: March 15, 2021
 
 Topic: 3D Projective Transformations
 
-Instructions:
+Description:
 -------------
+This module has functions for 3d projective transformations using matrices
+The functions include -
+- Rotation matrix about an axis and an angle theta
+- Affinesubmatrix 
+- Affinity matrix 
+- Similarity matrix
+- Projectivity matrix
+- Camera matrix
+- Camera image
 
 """
 from numpy import *
@@ -335,12 +344,22 @@ def cameraimage(P, X):
 Example: 
 -----------
 
+from gbot.transformations import *
+
+
 axis = [0,1,1]
 theta = 60
 
-print(rotation(theta,axis))
+In: rotation(theta,axis)
+Out:    [[-0.95241298  0.21553366 -0.21553366]
+        [-0.21553366  0.02379351  0.97620649]
+        [ 0.21553366  0.97620649  0.02379351]]
+
+
 
 '''
+
+
 
 ########################################################################
 ########################################################################

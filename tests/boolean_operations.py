@@ -8,8 +8,15 @@ Date: April 28, 2021
 
 Topic: Computational Geometry Boolean Operations
 
-Instructions:
+Description:
 -------------
+This Module helps in implementing geometric boolean operations on polygons,
+Here's a list of all the functionality :
+- Can Check if the polygon is simple or not.
+- The convexity of the polygon.
+- The point membership of a point wrt a polygon.
+- Intersecting points between two Polynomials
+- Geometric Intersction, Union and Difference of two Polygons
 
 """
 
@@ -18,11 +25,6 @@ STUDENT_ID='2018A4PS0846P'
 
 import numpy as np
 import sympy as simp
-
-
-VL=np.array([[0,0],[4,0],[4,4],[0,4]])
-VL2=np.array([[8,2],[5,1],[5,3]])
-
 
 
 # section 1: it contains all the helper functions
@@ -121,24 +123,6 @@ def leftOrRight(p0,p1,p2):
     else:
         return -1
 
-#helper to get intersecting points 
-def intersectingPoints(VL1, VL2):
-
-    arr = []
-    i=0
-    while i<len(VL1):
-        j=0
-        while j< len(VL2):
-            p = intersect(VL1[i], VL1[(i+1)%len(VL1)] , VL2[j], VL2[(j+1)%len(VL2)])
-           
-            if (not(np.all( np.isnan(p) )) ):
-                arr.append(p)
-            
-            j+=1
-        i+=1
-
-  
-    return arr
 
 #helper to order points so that it can be plotted as a polygon
 def orderPoints(VL):
@@ -311,6 +295,39 @@ def point_membership(P,VL):
         return 0
 
 
+def intersectingPoints(VL1, VL2):
+
+    '''
+    Parameters
+    ----------
+    VL1 : a 2D array, shape=(N rows, 2 columns)
+        A sequence of vertices, which form the boundary of a solid 1
+    VL2 : a 2D array, shape=(N rows, 2 columns)
+        A sequence of vertices, which form the boundary of a solid 2
+
+    Returns
+    -------
+    VL_int : A sequence of vertices that form the intersection 
+     of the two solids 1 and 2.
+
+    '''
+
+    arr = []
+    i=0
+    while i<len(VL1):
+        j=0
+        while j< len(VL2):
+            p = intersect(VL1[i], VL1[(i+1)%len(VL1)] , VL2[j], VL2[(j+1)%len(VL2)])
+           
+            if (not(np.all( np.isnan(p) )) ):
+                arr.append(p)
+            
+            j+=1
+        i+=1
+
+  
+    return arr
+
 
 def find_intersection(VL1,VL2):
     '''
@@ -428,9 +445,6 @@ def find_difference(VL1, VL2):
     
     VL_int = intersectingPoints(VL1,VL2)
 
- 
-
-    print(setA)
 
     # append all the point of VL1 that are outside VL2
     i =0
@@ -456,7 +470,38 @@ def find_difference(VL1, VL2):
 
     return VL_int
 
+'''
+Example : 
 
+from gbot.boolean_operations import *
+import numpy as np
+
+VL=np.array([[0,0],[4,0],[4,4],[0,4]])
+VL2=np.array([[0,2],[5,1],[5,3]])
+P = [0,0]
+
+In : check_simplepolygon(VL)
+Out : True
+
+In : check_convexity(VL)
+Out : True
+
+In : point_membership(P,VL)
+Out : -1
+
+In : intersectingPoints(VL,VL2)
+Out : [[4.0, 1.2], [4.0, 2.8], [0.0, 2.0], [0.0, 2.0]]
+
+In : find_difference(VL,VL2)
+Out :  [[4.  0. ]
+        [4.  1.2]
+        [4.  2.8]
+        [4.  4. ]
+        [0.  4. ]
+        [0.  2. ]
+        [0.  0. ]]
+(Similar syntax for find_intersection and find_union)
+'''
 ########################################################################
 ########################################################################
 # End of File
