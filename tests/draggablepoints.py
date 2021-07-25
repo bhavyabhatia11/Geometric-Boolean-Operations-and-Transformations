@@ -1,11 +1,8 @@
 '''
-Course: ME/MF F342 Computer Aided Design
-Author: Bhavya Bhatia
+Author : Bhavya Bhatia
 
 Description :
 -------------
-This is a seperate executable code written to visualise curve fitting and convex hull.
-
 The following code lets you click on a set of points and then create a curve that fits the set of points.
 In order to execute this code, you need to install bokeh, 
 
@@ -41,7 +38,7 @@ finally:
     pass
        
 # Create a plot
-fig = figure( title="CAD/Curves/01 Curve Fit", 
+fig = figure( title="CAD/Curves/Curve Fit", 
               plot_width=800,
               plot_height=500,
               x_range=(-5, 5), 
@@ -149,11 +146,8 @@ curdoc().add_root(layout)
 '''
 Example :
 ---------
-Directly save the file and and run using 
 
-python3 draggablepoints.py
-on localhost:5006 it will open an interactive webpage where user can add points and see the curve fitting.
-
+save the 
 '''
 ########################################################################
 ########################################################################
